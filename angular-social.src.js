@@ -17,7 +17,7 @@ app.directive('ngSocialButtons', ['$compile', '$q', '$parse', '$http', '$locatio
             restrict: 'A',
             scope: {
                 'url': '=',
-                'title': '=',
+                'title': '=',
                 'description': '=',
                 'image': '=',
                 'showcounts': '='
@@ -175,7 +175,7 @@ app.directive('ngSocialTwitter', function() {
             }
         },
         popup: {
-            url: 'https://twitter.com/intent/tweet?url={url}&text={title}',
+            url: 'http://twitter.com/intent/tweet?url={url}&text={title}',
             width: 600,
             height: 450
         },
@@ -421,7 +421,7 @@ angular.module("ngSocial").directive('ngSocialPinterest', function() {
             }
         },
         popup: {
-            url: 'http://pinterest.com/pin/create/button/?url={url}&description={title}',
+            url: 'http://pinterest.com/pin/create/button/?url={url}&description={title}&media={image}',
             width: 630,
             height: 270
         }
@@ -452,6 +452,7 @@ angular.module("ngSocial").directive('ngSocialPinterest', function() {
         }
     }
 });
+
 'use strict';
 
 angular.module("ngSocial").directive('ngSocialGithubForks', function() {
