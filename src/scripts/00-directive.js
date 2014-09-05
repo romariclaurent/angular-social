@@ -26,6 +26,7 @@ app.directive('ngSocialButtons', ['$compile', '$q', '$parse', '$http', '$locatio
             transclude: true,
             template: '<div class="ng-social-container ng-cloak"><ul class="ng-social" ng-transclude></ul></div>',
             controller: ['$scope', '$q', '$http', function ($scope, $q, $http) {
+
                 var getUrl = function () {
                     return $scope.url || $location.absUrl();
                 };
@@ -112,7 +113,17 @@ app.directive('ngSocialButtons', ['$compile', '$q', '$parse', '$http', '$locatio
                         return template(url, context, encodeURIComponent);
                     }
                 };
-                return ctrl;
+
+
+                this.init = ctrl.init;
+                this.link = ctrl.link;
+                this.clickShare = ctrl.clickShare;
+                this.openPopup = ctrl.openPopup;
+                this.getCount = ctrl.getCount;
+                this.makeUrl  = ctrl.makeUrl;
+
+                // return value is now ignored
+                // return ctrl;
             }]
         };
     }
